@@ -36,7 +36,7 @@ export default {
     item: {
       type: Object
     },
-    VideoId: {
+    videoId: {
       type: String
     }
   },
