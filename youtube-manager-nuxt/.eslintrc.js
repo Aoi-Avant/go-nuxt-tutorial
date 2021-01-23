@@ -16,6 +16,7 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'only-multiline'],
+    'arrow-parens': ['error', 'as-needed'],
     'vue/html-self-closing': [
       'error',
       {
