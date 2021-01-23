@@ -1,75 +1,47 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        youtube-manager-nuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <section clas="section">
+    <div class="container">
+      <div class="block">
+        <div class="block video-block" v-for="item in items">
+          <AppVideo :item="item" :video-id="item.id" />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import ROUTES from "~/routes/api";
+import AppVideo from "~/components/AppVideo";
 
 export default {
+  components: { AppVideo },
+
+  computed: {
+    items() {
+      return this.$store.getters.getPopularVideos;
+    }
+  },
+
   async fetch({ store }) {
     const payload = {
       uri: ROUTES.GET.POPULARS
     };
+
+    if (
+      store.getters.getPopularVideos &&
+      store.getters.getPopularVideos.length > 0
+    ) {
+      return;
+    }
 
     await store.dispatch("fetchPopularVideos", payload);
   }
 };
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style scoped>
+.video-block {
+  max-width: 900px;
 }
 </style>
