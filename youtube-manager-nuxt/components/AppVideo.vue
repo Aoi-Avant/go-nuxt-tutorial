@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/video/${videoId}'">
+  <nuxt-link :to="`/video/${videoId}`">
     <div class="box video-box">
       <article class="media">
         <div class="media-left">
