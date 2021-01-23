@@ -32,26 +32,28 @@
 
 <script>
 export default {
-  props: {
-    item: {
-      type: Object
-    },
-    videoId: {
-      type: String
-    }
-  },
   filters: {
     omit: value => {
       if (!value) {
-        return "";
+        return ''
       }
 
       if (value.length > 120) {
-        return value.substr(0, 120) + "...";
+        return value.substr(0, 120) + '...'
       }
 
-      return value;
-    }
-  }
-};
+      return value
+    },
+  },
+  props: {
+    item: {
+      type: Object,
+      default: null,
+    },
+    videoId: {
+      type: String,
+      default: '',
+    },
+  },
+}
 </script>

@@ -1,4 +1,0 @@
-{
-  "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true
-}
