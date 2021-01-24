@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/Aoi-Avant/go-nuxt-tutorial/middlewares"
 	"github.com/Aoi-Avant/go-nuxt-tutorial/routes"
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -24,6 +25,7 @@ func main() {
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.CORS())
+	e.Use(middlewares.YoutubeService())
 
 	// Routes
 	routes.Init(e)
