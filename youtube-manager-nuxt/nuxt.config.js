@@ -17,7 +17,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-youtube'],
+  plugins: ['~/plugins/vue-youtube', '~/plugins/cookies-to-state'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -34,6 +34,7 @@ export default {
     '@nuxtjs/bulma',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'cookie-universal-nuxt',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
