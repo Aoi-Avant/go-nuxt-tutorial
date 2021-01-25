@@ -58,6 +58,16 @@ export const actions = {
   async setToken({ commit }, payload) {
     commit('mutateToken', payload)
   },
+
+  async login({ commit }, payload) {
+    const res = await firebase
+      .auth()
+      .signInWithEmailAndPassword(payload.email, payload.password)
+    const token = await res.user.getIdToken()
+    this.$cookies.set('jwt_token', token)
+    commit('mutateToken', token)
+    this.app.router.push('/')
+  },
 }
 
 export const mutations = {
@@ -102,5 +112,8 @@ export const getters = {
   },
   getSearchMeta(state) {
     return state.searchMeta
+  },
+  isLoggedIn(state) {
+    return !!state.token
   },
 }
