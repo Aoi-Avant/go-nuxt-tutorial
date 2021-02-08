@@ -4,6 +4,8 @@ go 1.15
 
 require (
 	cloud.google.com/go v0.75.0 // indirect
+	cloud.google.com/go/firestore v1.4.0 // indirect
+	firebase.google.com/go v3.13.0+incompatible // indirect
 	github.com/andybalholm/brotli v1.0.1 // indirect
 	github.com/cosmtrek/air v1.21.2 // indirect
 	github.com/creack/pty v1.1.11 // indirect
