@@ -11,6 +11,7 @@ require (
 	github.com/creack/pty v1.1.11 // indirect
 	github.com/fatih/color v1.10.0 // indirect
 	github.com/imdario/mergo v0.3.11 // indirect
+	github.com/jinzhu/gorm v1.9.16 // indirect
 	github.com/joho/godotenv v1.3.0
 	github.com/klauspost/compress v1.11.7 // indirect
 	github.com/labstack/echo v3.3.10+incompatible
