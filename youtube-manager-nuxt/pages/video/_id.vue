@@ -26,7 +26,7 @@
                     <i
                       class="fas fa-heart fa-stack-lx"
                       :class="[
-                        item.idFavorite ? 'active' : 'has-text-gray-light',
+                        item.isFavorite ? 'active' : 'has-text-gray-light',
                       ]"
                     >
                     </i>
